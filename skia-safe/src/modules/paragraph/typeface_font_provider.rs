@@ -1,14 +1,16 @@
-use crate::{
-    interop::{self, AsStr},
-    prelude::*,
-    FontMgr, FontStyleSet, Typeface,
-};
-use skia_bindings as sb;
 use std::{
     fmt,
     mem::transmute,
     ops::{Deref, DerefMut},
     ptr,
+};
+
+use skia_bindings as sb;
+
+use crate::{
+    interop::{self, AsStr},
+    prelude::*,
+    FontMgr, FontStyleSet, Typeface,
 };
 
 pub type TypefaceFontStyleSet = RCHandle<sb::skia_textlayout_TypefaceFontStyleSet>;
@@ -133,12 +135,13 @@ impl TypefaceFontProvider {
 
 #[cfg(test)]
 mod tests {
-    use super::{TypefaceFontProvider, TypefaceFontStyleSet};
     use crate::{
         prelude::{NativeAccess, NativeRefCounted, NativeRefCountedBase},
         textlayout::FontCollection,
         Typeface,
     };
+
+    use super::{TypefaceFontProvider, TypefaceFontStyleSet};
 
     #[test]
     #[serial_test::serial]

@@ -131,21 +131,24 @@ extern "C" fn handle_load(
                 )
             };
 
-            match ureq::get(&path).call() {
-                Ok(response) => {
-                    let mut reader = response.into_reader();
-                    let mut data = Vec::new();
-                    if reader.read_to_end(&mut data).is_err() {
-                        data.clear();
-                    };
-                    let data = Data::new_copy(&data);
-                    data.into_ptr()
-                }
-                Err(_) => {
-                    let data = Data::new_empty();
-                    data.into_ptr()
-                }
-            }
+            // match ureq::get(&path).call() {
+            //     Ok(response) => {
+            //         let mut reader = response.into_reader();
+            //         let mut data = Vec::new();
+            //         if reader.read_to_end(&mut data).is_err() {
+            //             data.clear();
+            //         };
+            //         let data = Data::new_copy(&data);
+            //         data.into_ptr()
+            //     }
+            //     Err(_) => {
+            //         let data = Data::new_empty();
+            //         data.into_ptr()
+            //     }
+            // }
+
+            let data = Data::new_empty();
+            data.into_ptr()
         }
     }
 }

@@ -1,11 +1,13 @@
+use core::fmt;
+use std::{ffi::CString, mem, os::raw::c_char};
+
+use skia_bindings::{self as sb, SkFontMgr, SkFontStyleSet, SkRefCntBase};
+
 use crate::{
     interop::{self, DynamicMemoryWStream},
     prelude::*,
     FontStyle, Typeface, Unichar,
 };
-use core::fmt;
-use skia_bindings::{self as sb, SkFontMgr, SkFontStyleSet, SkRefCntBase};
-use std::{ffi::CString, mem, os::raw::c_char};
 
 pub type FontStyleSet = RCHandle<SkFontStyleSet>;
 
@@ -24,9 +26,8 @@ impl Default for FontStyleSet {
 impl fmt::Debug for FontStyleSet {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         f.debug_struct("FontStyleSet")
-            // TODO: clarify why self has to be mut.
-            // .field("count", &self.count())
-            .finish()
+        // TODO: clarify why self has to be mut.
+        // .field("count", &self.count()).finish()
     }
 }
 

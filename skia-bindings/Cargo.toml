@@ -14,15 +14,14 @@ authors = ["LongYinan <lynweklm@gmail.com>", "Armin Sander <armin@replicator.org
 edition = "2021"
 build = "build.rs"
 links = "skia"
-include = [
-	"Cargo.toml",
-	"bindings_docs.rs",
-	"build.rs",
-	"build_support.rs",
-	"build_support/**/*.rs",
-	"src/**/*.h",
-	"src/**/*.cpp",
-	"src/*.rs" ]
+include = ["Cargo.toml",
+    "bindings_docs.rs",
+    "build.rs",
+    "build_support.rs",
+    "build_support/**/*.rs",
+    "src/**/*.h",
+    "src/**/*.cpp",
+    "src/*.rs"]
 
 [lib]
 doctest = false

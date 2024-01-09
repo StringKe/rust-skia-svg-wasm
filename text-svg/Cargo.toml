@@ -1,0 +1,11 @@
+[package]
+name = "text-svg"
+version = "0.1.0"
+edition = "2021"
+
+[features]
+default = ["skia-safe/svg", "skia-safe/textlayout", "skia-safe/embed-freetype"]
+
+[dependencies]
+skia-safe = { path = "../skia-safe" }
+log = "0.4.20"

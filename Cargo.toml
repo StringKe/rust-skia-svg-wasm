@@ -5,7 +5,8 @@ members = [
     "skia-safe",
     "skia-org",
     "mk-workflows",
-    "comment-converter"
+    "comment-converter",
+    "text-svg"
 ]
 
 [profile.release]
